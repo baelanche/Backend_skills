@@ -4,7 +4,9 @@
 
 #### 1. update and upgrade
 
-`$ sudo apt-get update && upgrade`
+```
+$ sudo apt-get update && upgrade
+```
 
 #### 2. install https connection packages
 
@@ -39,7 +41,9 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 #### 6. check docker
 
-`$ sudo docker version`
+```
+$ sudo docker version
+```
 
 #### 7. use docker without 'sudo'
 
@@ -50,6 +54,8 @@ $ reboot
 
 ## 2. Redis
 
-`$ docker pull redis`
+```
+$ docker pull redis
+```
 
 redis 를 다루는 내용은 [redis directory](https://github.com/baelanche/Backend_skills/tree/main/redis) 에 기술
