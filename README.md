@@ -40,3 +40,11 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 #### 6. check docker
 
 `$ sudo docker version`
+
+#### 7. use docker without 'sudo'
+
+```
+$ sudo usermod -aG docker $USER
+$ reboot
+```
+
