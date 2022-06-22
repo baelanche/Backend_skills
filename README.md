@@ -52,4 +52,4 @@ $ reboot
 
 `$ docker pull redis`
 
-redis 를 다루는 내용은 redis directory 에 기술
+redis 를 다루는 내용은 [redis directory](https://github.com/baelanche/Backend_skills/tree/main/redis) 에 기술
