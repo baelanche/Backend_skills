@@ -48,3 +48,8 @@ $ sudo usermod -aG docker $USER
 $ reboot
 ```
 
+## 2. Redis
+
+`$ docker pull redis`
+
+redis 를 다루는 내용은 redis directory 에 기술
