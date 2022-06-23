@@ -132,3 +132,12 @@ $ docker run -p 80:80 httpd
 $ docker exec -it [container name] [command]
 ```
 
+## Link File System
+
+container 안의 내용을 작업하고 나서 container 를 지운다면 작업 내용이 모두 날아갈 것이다.  
+그래서 host 에서의 작업을 container 에 연결하여 반영시키는 방법으로 한다.  
+호스트에서 직접 수정하기 때문에 버전 관리, 백업에 용이하다.
+
+```
+$ docker run --name [container name] -p [host port]:[container port] -v [local directory]:[container directory] [image name]
+```
