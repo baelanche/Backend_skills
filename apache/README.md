@@ -34,6 +34,8 @@ $ docker exec -it ws /bin/bash
 
 ```
 cd htdocs
+apt update
+apt install vim
 vi index.html
 ```
 
