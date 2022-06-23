@@ -1,6 +1,4 @@
-# Install
-
-## Docker
+# Docker
 
 |OS|Docker|
 |:---:|:---:|
@@ -8,6 +6,8 @@
 |process|container|
 
 <b>dokcer hub</b> --<sub>(pull)</sub>--> <b>image</b> --<sub>(run)</sub>--> <b>container</b>
+
+## Install
 
 #### 1. update and upgrade
 
