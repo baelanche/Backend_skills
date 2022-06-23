@@ -118,10 +118,17 @@ running container can be removed `force` command
 $ docker rmi [image name]
 ```
 
-### Port forwarding
+#### 8. port forwarding
 
 ```
-docker run -p 80:80 httpd
+$ docker run -p 80:80 httpd
 ```
 
 -p [host port]:[container port]
+
+#### 9. control container
+
+```
+$ docker exec -it [container name] /bin/sh
+```
+
