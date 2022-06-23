@@ -2,6 +2,13 @@
 
 ## Docker
 
+|OS|Docker|
+|:---:|:---:|
+|program|image|
+|process|container|
+
+<b>dokcer hub</b> --<sub>(pull)</sub>--> <b>image</b> --<sub>(run)</sub>--> <b>container</b>
+
 #### 1. update and upgrade
 
 ```
