@@ -39,4 +39,8 @@ apt install vim
 vi index.html
 ```
 
+## link file system
+
+```
+$ docker run --name ws -p 8888:80 -v ~/Desktop/Backend_skills/apache/htdocs:/usr/local/apache2/htdocs/ httpd
 
