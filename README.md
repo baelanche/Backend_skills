@@ -1,6 +1,6 @@
 # Install
 
-## 1. Docker
+## Docker
 
 #### 1. update and upgrade
 
@@ -52,10 +52,13 @@ $ sudo usermod -aG docker $USER
 $ reboot
 ```
 
-## 2. Redis
+## Docker hub
+
+https://hub.docker.com 는 docker 의 marketplace 이다.  
+여기서 제공하는 package 들을 확인하고 다운받을 수 있다.
+
+#### 1. Apache
 
 ```
-$ docker pull redis
+$ docker pull httpd
 ```
-
-redis 를 다루는 내용은 [redis directory](https://github.com/baelanche/Backend_skills/tree/main/redis) 에 기술
