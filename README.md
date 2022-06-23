@@ -116,7 +116,7 @@ running container can be removed `force` command
 
 ```
 $ docker rmi [image name]
-``
+```
 
 ### Port forwarding
 
