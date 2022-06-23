@@ -129,6 +129,6 @@ $ docker run -p 80:80 httpd
 #### 9. control container
 
 ```
-$ docker exec -it [container name] /bin/sh
+$ docker exec -it [container name] [command]
 ```
 
