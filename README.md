@@ -64,8 +64,56 @@ $ reboot
 https://hub.docker.com 는 docker 의 marketplace 이다.  
 여기서 제공하는 package 들을 확인하고 다운받을 수 있다.
 
-#### 1. Apache
+## Command
+
+#### 1. pull
 
 ```
-$ docker pull httpd
+$ docker pull [image name]
+```
+
+#### 2. run
+
+```
+$ docker run --name [custom name] [image name]
+```
+
+#### 3. check container list
+
+```
+$ docker ps
+```
+
+#### 4. stop (not remove) / start
+
+```
+$ docker stop [custom name or container id]
+```
+
+stopped image is listed by `docker ps -a`
+
+```
+$ docker start [custom name or container id]
+```
+
+#### 5. log
+
+```
+$ docker logs -f [custom name or container id]
+```
+
+-f : observe realtime
+
+#### 6. remove
+
+```
+$ docker rm -f [custom name or container id]
+```
+
+running container can be removed `force` command
+
+#### 7. remove image
+
+```
+$ docker rmi [image name]
 ```
