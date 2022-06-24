@@ -141,3 +141,55 @@ container 안의 내용을 작업하고 나서 container 를 지운다면 작업
 ```
 $ docker run --name [container name] -p [host port]:[container port] -v [local directory]:[container directory] [image name]
 ```
+
+## Docker - Github
+
+#### 1. Generate token
+ 
+gibhub.com - Settings - Developer settings - Personal access tokens  
+- Generate new token - check write:packages, delete:packages
+
+#### 2. Register your token as environment variable
+
+```
+$ export CR_PAT=[your token]
+$ echo $CR_PAT
+```
+
+#### 3. Login to the Container registry service
+
+```
+$ echo $CR_PAT | docker login ghcr.io -u [USERNAME] --password-stdin
+```
+
+#### 4. Whenever bash booted, register token
+
+```
+$ vi ~/.bashrc
+
+# Bash into running container
+export CR_PAT=[your token]
+```
+
+test
+
+```
+source ~/.bashrc
+echo $CR_PAT
+```
+
+#### 5. Docker image push
+
+terminal 1 :
+
+```
+$ docker -it --name my-ubuntu ubuntu
+```
+
+terminal 2 :
+
+```
+$ docker commit my-ubuntu ghcr.io/[username]/my-ubuntu:1.0
+$ docker images
+$ docker push ghcr.io/[username]/my-ubuntu:1.0
+```
