@@ -146,8 +146,7 @@ $ docker run --name [container name] -p [host port]:[container port] -v [local d
 
 #### 1. Generate token
  
-gibhub.com - Settings - Developer settings - Personal access tokens  
-- Generate new token - check write:packages, delete:packages
+Connect github.com - Settings - Developer settings - Personal access tokens - Generate new token - Check write:packages, delete:packages
 
 #### 2. Register your token as environment variable
 
