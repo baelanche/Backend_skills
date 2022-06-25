@@ -142,7 +142,27 @@ container 안의 내용을 작업하고 나서 container 를 지운다면 작업
 $ docker run --name [container name] -p [host port]:[container port] -v [local directory]:[container directory] [image name]
 ```
 
-## Docker - Github
+## Make image
+
+* by commit container
+* by commit container and push github
+* by build Dockerfile
+
+### 1. by commit container
+
+terminal 1 :
+
+```
+$ docker run -it --name my-ubuntu 
+```
+
+terminal 2 :
+
+```
+$ docker commit my-ubuntu baelanche:ubuntu
+```
+
+### 2. by commit container (git packages)
 
 #### 1. Generate token
  
@@ -170,7 +190,7 @@ $ vi ~/.bashrc
 export CR_PAT=[your token]
 ```
 
-test
+test :
 
 ```
 source ~/.bashrc
@@ -192,3 +212,20 @@ $ docker commit my-ubuntu ghcr.io/[username]/my-ubuntu:1.0
 $ docker images
 $ docker push ghcr.io/[username]/my-ubuntu:1.0
 ```
+
+## Share image
+
+```
+$ docker commit my-ubuntu [docker hub id]/ubuntu:1.0
+```
+
+```
+$ docker login
+```
+
+> input your docker hub id and password
+
+```
+$ docker push [docker hub id]/ubuntu:1.0
+```
+
