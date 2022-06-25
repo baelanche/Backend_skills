@@ -235,3 +235,17 @@ $ docker login
 $ docker push [docker hub id]/ubuntu:1.0
 ```
 
+### 3. by build Dockerfile
+
+```
+vi Dockerfile
+```
+
+Fill Dockerfile referenced by ./Dockerfile
+
+```
+$ docker build -t web-server-build .
+$ docker run -p 8888:8000 --name web-server web-server-build
+```
+
+Connect localhost:8888
