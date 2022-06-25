@@ -213,6 +213,12 @@ $ docker images
 $ docker push ghcr.io/[username]/my-ubuntu:1.0
 ```
 
+When do you want to get images through git packages :
+
+```
+$ docker pull ghcr.io/[username]/my-ubuntu:1.0
+```
+
 ## Share image
 
 ```
