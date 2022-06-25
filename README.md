@@ -202,7 +202,7 @@ echo $CR_PAT
 terminal 1 :
 
 ```
-$ docker -it --name my-ubuntu ubuntu
+$ docker run -it --name my-ubuntu ubuntu
 ```
 
 terminal 2 :
