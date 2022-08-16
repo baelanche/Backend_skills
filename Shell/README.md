@@ -3,7 +3,7 @@
 #### 1. Open .profile
 
 ```
-vi .profile
+vi ~/.profile
 ```
 
 #### 2. Write down scripts
@@ -16,3 +16,8 @@ PATH=$PATH:$HOME/(your directory)
 export PATH
 ```
 
+#### 3. Update
+
+```
+source ~/.profile
+```
