@@ -11,7 +11,7 @@ struct arg_struct {
 
 void *dgrep(void *arguments) {
   struct arg_struct *args = arguments;
-  execlp("grep", "grep", "-r", "--color=auto", args->arg1, args->arg2, NULL);
+  execlp("grep", "grep", "-r", "-n", "--color=auto", args->arg1, args->arg2, NULL);
   exit(0);
 }
 
