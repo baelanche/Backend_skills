@@ -18,7 +18,6 @@ void *dgrep(void *arguments) {
 int main(int argc, char* argv[]) {
   pid_t pid;
   pthread_t thread[2];
-  printf("%ld\n", sizeof(thread));
   int status;
   if ((pid = fork()) == 0) {
     struct arg_struct args;
