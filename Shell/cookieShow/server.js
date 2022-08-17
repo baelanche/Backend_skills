@@ -9,10 +9,10 @@ app.listen(3000, () => console.log("server on"));
 
 // dummy data
 const shows = [
- { id: 1, name: "show1", showStartDate: "202208171530", showEndDate: "202208171630",
+ { id: 1, name: "show1", reserveStartDate: "202208171530", reserveEndDate: "202208171630",
    seats: [false, false, false]
  },
- { id: 2, name: "show2", showStartDate: "202208171630", showEndDate: "202208171730",
+ { id: 2, name: "show2", reserveStartDate: "202208171630", reserveEndDate: "202208171730",
    seats: [false, false, false]
  }
 ];
@@ -32,8 +32,8 @@ app.get("/shows/:show_id", (req, res) => {
 
 // 추가
 app.post("/shows/add", (req, res) => {
-    const { id, name, showStartDate, showEndDate, seats } = req.body
-    const show = shows.concat({id, name, showStartDate, showEndDate, seats});
+    const { id, name, reserveStartDate, reserveEndDate, seats } = req.body
+    const show = shows.concat({id, name, reserveStartDate, reserveEndDate, seats});
 
     res.json({ok: true, shows: show})
 })
@@ -44,7 +44,11 @@ app.patch("/show/reserve/:show_id", (req, res) => {
     const { show_seat } = req.body
 
     const show = shows.map(data => {
-
+        // 이미 예약된 경우
+        if(data.seats[show_seat] == true) {
+          return
+        }
+        data.seats[show_seat] = true
         if(data.id == show_id) {
           return { show: data }
         }
