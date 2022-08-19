@@ -110,6 +110,12 @@ $ docker logs -f [custom name or container id]
 $ docker rm -f [custom name or container id]
 ```
 
+remove all container :
+
+```
+$ docker rm -f $(docker ps -aq)
+```
+
 running container can be removed `force` command
 
 #### 7. remove image
