@@ -80,3 +80,31 @@
    * `sudo systemctl enable logstash` (wsl : `sudo service logstash enable`)
       * when you meet `logstash: unrecognized service`
       * `sudo /usr/share/logstash/bin/system-install /etc/logstash/startup.options sysv` 
+9. filebeat
+   * `sudo apt install filebeat`
+   * `sudo vi /etc/filebeat/filebeat.yml`
+      * line 135 : `output.elasticsearch` -> `#output.elasticsearch`
+      * line 137 : `hosts: ["localhost:9200"]` -> `#hosts: ["localhost:9200"]`
+      * line 148 : `#output.logstash` -> `output.logstash`
+      * line 150 : `#hosts: ["localhost:5044"]` -> `hosts: ["localhost:5044"]`
+10. nginx logs
+   * `sudo filebeat modules enable nginx`
+   * `sudo filebeat setup --pipelines --modules nginx`
+   * `sudo filebeat setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'`
+   * `sudo systemctl start filebeat` (wsl : `sudo service filebeat start`)
+   * `sudo systemctl enable filebeat` (wsl : `sudo service filebeat enable`)
+11. security
+   * `sudo vi /etc/elasticsearch/elasticsearch.yml`
+   * write down end of file
+   * ```
+     xpack.security.enabled: true
+     xpack.security.transport.ssl.enabled: true
+     ```
+   * `sudo systemctl restart elasticsearch` (wsl : `sudo service elasticsearch restart`)
+   * `/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interative`
+   * `sudo vi /etc/kibana/kibana.yml`
+   * ```
+     elasticsearch.username: "kibana_system"
+     elasticsearch.password: "input_your_password"
+     ```
+   * `sudo systemctl restart kibana` (wsl : `sudo service kibana restart`)
