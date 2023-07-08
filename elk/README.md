@@ -88,31 +88,30 @@
       * line 148 : `#output.logstash` -> `output.logstash`
       * line 150 : `#hosts: ["localhost:5044"]` -> `hosts: ["localhost:5044"]`
 10. nginx logs
-   * `sudo filebeat modules enable nginx`
-   * `sudo filebeat setup --pipelines --modules nginx`
-   * `sudo filebeat setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'`
-   * `sudo systemctl start filebeat` (wsl : `sudo service filebeat start`)
-   * `sudo systemctl enable filebeat` (wsl : `sudo service filebeat enable`)
+    * `sudo filebeat modules enable nginx`
+    * `sudo filebeat setup --pipelines --modules nginx`
+    * `sudo filebeat setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'`
+    * `sudo systemctl start filebeat` (wsl : `sudo service filebeat start`)
+    * `sudo systemctl enable filebeat` (wsl : `sudo service filebeat enable`)
 11. security
-   * `sudo vi /etc/elasticsearch/elasticsearch.yml`
-   * write down end of file
-   * ```
-     xpack.security.enabled: true
-     xpack.security.transport.ssl.enabled: true
-     ```
-   * `sudo systemctl restart elasticsearch` (wsl : `sudo service elasticsearch restart`)
-   * `sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
-   * `sudo vi /etc/kibana/kibana.yml`
-   * ```
-     elasticsearch.username: "elastic"
-     elasticsearch.password: "input_your_password"
-     ```
-   * `sudo systemctl restart kibana` (wsl : `sudo service kibana restart`)
-
+    * `sudo vi /etc/elasticsearch/elasticsearch.yml`
+    * write down end of file
+    * ```
+      xpack.security.enabled: true
+      xpack.security.transport.ssl.enabled: true
+      ```
+    * `sudo systemctl restart elasticsearch` (wsl : `sudo service elasticsearch restart`)
+    * `sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
+    * `sudo vi /etc/kibana/kibana.yml`
+    * ```
+      elasticsearch.username: "elastic"
+      elasticsearch.password: "input_your_password"
+      ```
+    * `sudo systemctl restart kibana` (wsl : `sudo service kibana restart`)
 12. usage
-   * kibana
-      * ![image](https://github.com/baelanche/Backend_skills/assets/48989903/9bf7f951-8513-43b0-84a4-afee077b8131)
-   * elastic search
-      * `curl --user elastic localhost:9200`
-      * input your password   
+    * kibana
+       * ![image](https://github.com/baelanche/Backend_skills/assets/48989903/9bf7f951-8513-43b0-84a4-afee077b8131)
+    * elastic search
+       * `curl --user elastic localhost:9200`
+       * input your password   
 
