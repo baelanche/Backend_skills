@@ -101,10 +101,18 @@
      xpack.security.transport.ssl.enabled: true
      ```
    * `sudo systemctl restart elasticsearch` (wsl : `sudo service elasticsearch restart`)
-   * `/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interative`
+   * `sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
    * `sudo vi /etc/kibana/kibana.yml`
    * ```
-     elasticsearch.username: "kibana_system"
+     elasticsearch.username: "elastic"
      elasticsearch.password: "input_your_password"
      ```
    * `sudo systemctl restart kibana` (wsl : `sudo service kibana restart`)
+
+12. usage
+   * kibana
+      * ![image](https://github.com/baelanche/Backend_skills/assets/48989903/9bf7f951-8513-43b0-84a4-afee077b8131)
+   * elastic search
+      * `curl --user elastic localhost:9200`
+      * input your password   
+
